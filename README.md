@@ -14,13 +14,14 @@ The default button colors can be chosen at your discretion.
 should also work via the keyboard. Users should be able to navigate through tags using the Up/Down arrow keys and Tab,
 and select a tag using Enter/Space.
 
-// TODO   
+## TODO   
 - [ ] overflow list  
 - [ ] overflow item length
 - [x] could be disabled options
 - [ ] focus on selected item when opened by keyboard
 - [x] disable tab out of component list when opened
 - [ ] validation if needed
+- [ ] tests
 
 ## How to run
 

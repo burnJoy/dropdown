@@ -52,7 +52,7 @@ const keyActions: Record<string, (event: KeyboardEvent) => void> = {
   Enter: () => activeIndex.value >= 0 && onSelect(props.list[activeIndex.value]),
   Escape: () => (isOpen.value = false),
   Tab: (event) => {
-    if(event.shiftKey) {
+    if (event.shiftKey) {
       focusPreviousItem();
     } else {
       focusNextItem();
@@ -112,7 +112,7 @@ const activeIndex = ref(-1);
         {{ selected?.label || label }}
         <span
           class="border-t-2 border-r-2 w-2 h-2 border-gray-700 ml-2 ease-in-out transition-all"
-          :class="{ 'rotate-135': !isOpen, '-rotate-45': isOpen, 'mt-2': isOpen }"
+          :class="{ 'rotate-135': !isOpen, '-rotate-45 mt-2': isOpen }"
         ></span>
       </span>
     </button>
