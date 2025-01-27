@@ -46,13 +46,17 @@ const focusPreviousItem = () => {
   items.value[activeIndex.value]?.querySelector('button')?.focus();
 };
 
-const keyActions: Record<string, () => void> = {
+const keyActions: Record<string, (event: KeyboardEvent) => void> = {
   ArrowDown: focusNextItem,
   ArrowUp: focusPreviousItem,
   Enter: () => activeIndex.value >= 0 && onSelect(props.list[activeIndex.value]),
   Escape: () => (isOpen.value = false),
-  Tab: () => {
-    focusNextItem();
+  Tab: (event) => {
+    if(event.shiftKey) {
+      focusPreviousItem();
+    } else {
+      focusNextItem();
+    }
   },
 };
 
@@ -61,7 +65,7 @@ const handleKeyDown = (event: KeyboardEvent) => {
   const action = keyActions[event.key];
   if (action) {
     event.preventDefault();
-    action();
+    action(event);
   }
 };
 
